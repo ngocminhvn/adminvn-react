@@ -12,6 +12,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
       <Routes>
+        <Switch>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -19,6 +20,7 @@ class App extends React.Component {
         <Route path="service" element={<Service />} />
         <Route path="report" element={<Report />} />
       </Routes>
+      </Switch>
     </BrowserRouter>
     );
   }
