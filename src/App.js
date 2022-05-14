@@ -19,8 +19,8 @@ class App extends React.Component {
         <Route path="term" element={<Term />} />
         <Route path="service" element={<Service />} />
         <Route path="report" element={<Report />} />
+        </Switch>
       </Routes>
-      </Switch>
     </BrowserRouter>
     );
   }
