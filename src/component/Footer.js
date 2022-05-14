@@ -16,7 +16,7 @@ function Footer(){
                             </div>
                             <div className="footer-item_link">
                             Hotline:
-                            <a href="tel:112">
+                            <a href="tel:113">
                             0334955115
                             </a>
                             </div>
