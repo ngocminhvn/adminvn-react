@@ -40,7 +40,7 @@ function Header(){
                         </div>
                         </div>
                         <div className="header-button_items position-relative">
-                        <a href="https://admin.vn/scam/create" role="button" className="btn-theme btn-theme_primary">
+                        <a href="/report" role="button" className="btn-theme btn-theme_primary">
                             <div className="d-block d-sm-none">
                             <i className="fas fa-exclamation" />
                             </div>
@@ -87,7 +87,7 @@ function Header(){
                             <FontAwesomeIcon icon="fas fa-search" />
                         </button>
                         <div className="header-search">
-                        <form action="https://admin.vn/scam/search" method="POST">
+                        <form method="POST">
                             <div className="form-group position-relative">
                             <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                             <button type="submit">
@@ -98,7 +98,7 @@ function Header(){
                         </div>
                     </div>
                     <div className="header-button_items position-relative">
-                        <a href="https://admin.vn/scam/create" role="button" className="btn-theme btn-theme_primary">
+                        <a href="/report" role="button" className="btn-theme btn-theme_primary">
                         TỐ CÁO LỪA ĐẢO
                         <span />
                         </a>
