@@ -16,7 +16,7 @@ export default class Scam extends React.Component {
 
   render() {
     return (
-      <ul>
+      <>
         {
           this.state.scam
             .map(person =>
@@ -42,7 +42,7 @@ export default class Scam extends React.Component {
             </div>
             )
         }
-      </ul>
+      </>
     )
   }
 }
