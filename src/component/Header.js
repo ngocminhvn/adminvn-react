@@ -60,7 +60,7 @@ function Header(){
                         <Link to="/">
                             <img src="https://i.imgur.com/dOUNkAK.png" height={42} />
                         </Link>
-                        <button type="button" className="header-navigation_close" id="header-navigation_close"><i className="far fa-times" /></button>
+                        <button type="button" className="header-navigation_close" id="header-navigation_close" onClick={CloseHeader}>&times;</button>
                         </li>
                         <li>
                         <Link to="/home">HOME</Link>
