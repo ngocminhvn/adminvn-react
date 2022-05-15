@@ -18,43 +18,11 @@ class Service extends React.Component {
                                     QUỸ BẢO HIỂM MMO
                                 </div>
                                 <div class="line"></div>
-                                <div class="tab">
-                                    <div class="subtitle">
-                                        Ấn vào "Tab dịch vụ" để lọc admin !!!
-                                    </div>
-                                    <ul class="nav nav-tabs tab-theme">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="https://admin.vn/trust-services" role="tab">
-                                                Tất cả
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="https://admin.vn/trust-services?cate=giao-dich-trung-gian" role="tab">
-                                                ADMINISTRATOR VIETNAM
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="https://admin.vn/trust-services?cate=dich-vu-mxh" role="tab">
-                                                Cung cấp các dịch vụ MXH
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="https://admin.vn/trust-services?cate=dich-vu-khac" role="tab">
-                                                Cung Cấp Random
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="https://admin.vn/trust-services?cate=dichvu-website" role="tab">
-                                                Thiết kế Website,Vps,Hosting,Premium,Sever
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="tab-content">
-                                <div class="tab-pane fade active show" id="tab-1">
+                                <div class="tab-pane active show" id="tab-1">
                                     <div class="shield-inner">
                                         <div class="shield-list">
                                             <div class="shield-title">
@@ -90,10 +58,6 @@ class Service extends React.Component {
             </div>
         </div>
         <Footer></Footer>
-        <div className="float-buttons">
-          <a href="https://admin.vn/scam/create" className="btn-theme btn-theme_primary">TỐ CÁO <span /></a>
-          <a href="https://admin.vn/trust-services" className="btn-theme btn-theme_success">CHECK UY TÍN<span /></a>
-        </div>
       </div>
     </>
     );

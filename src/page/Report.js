@@ -1,16 +1,50 @@
 import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import axios from "axios";
 
 class Report extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state= {
+            name:'',
+            phone:'',
+            stk:'',
+            bank:'',
+            note:'',
+            image:''
+        }
+       
+    }
+
+    handleHtmlControlChange = (event) => {
+        this.setState({ [event.target.name]:event.target.value   })
+    }
+    handleChange = (event) => {
+        this.setState({food: Array.from(event.target.selectedOptions, (item) => item.value)});
+      }
+    handleSubmit  = (event) => {
+        console.log(this.state);
+        event.preventDefault();
+        axios.post('https://reqres.in/api/users',this.state).
+        then( response => {
+            console.log(response)
+            this.setState({message:"User created successfuly."})
+        }).catch( error => {
+            console.log(error)
+        })
+    }
+
   render()  {
+    const { name,phone,stk,bank,note,image,report_name,report_phone } = this.state
     return (
       <>
       <div>
         <Header></Header>
         <div id="main" className="main">
             <div className="section-gap section-report">
-            <form method="POST" action="https://admin.vn/scam/save" className="form-theme" encType="multipart/form-data">
+            <form method="POST" className="form-theme" encType="multipart/form-data"  onSubmit={this.handleSubmit}>
                 <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-12">
@@ -25,13 +59,13 @@ class Report extends React.Component {
                     <div className="row row-col-10">
                         <div className="col-md-6 col-12">
                         <div className="form-theme_item">
-                            <input type="text" name="name" className="form-theme_item__input" />
+                            <input type="text" name="name" value={name} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor> Họ và tên <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
                         <div className="col-md-6 col-12">
                         <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="phone" />
+                            <input type="text" name="phone" value={phone} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor>
                             Số điện thoại
                             </label>
@@ -39,33 +73,20 @@ class Report extends React.Component {
                         </div>
                         <div className="col-md-6 col-12">
                         <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="account_num" />
+                            <input type="text" name="stk" value={stk} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor> Số tài khoản <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
                         <div className="col-md-6 col-12">
                         <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="account_bank" />
+                            <input type="text" name="bank" value={bank} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor> Ngân hàng <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
                         <div className="col-12">
                         <div className="form-theme_item">
-                            <div className="form-theme_item__upload">
-                            <div className="form-theme_item__upload-images">
-                                <div id="dropzone_files" className="dropzone">
-                                <div className="dz-message needsclick">
-                                    <p style={{fontSize: '13px'}}>Kéo hoặc click vào đây để upload</p>
-                                </div>
-                                <input type="file" name="file" style={{display: 'none'}} />
-                                </div>
-                                <ul id="file-upload-list" className="list-unstyled" />
-                            </div>
-                            <div className="form-theme_item__upload-desc">
-                                <i className="far fa-images" />
-                                Upload Bill chuyển tiền &amp; ảnh đoạn chát lừa đảo.
-                            </div>
-                            </div>
+                            <input type="file" className="form-theme_item__input input-image" name="image" value={image}/>
+                            <label className="form-theme_item__label" htmlFor> Ảnh bằng chứng <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
                         <div className="col-12 py-0">
@@ -77,7 +98,7 @@ class Report extends React.Component {
                         </div>
                         <div className="col-12">
                         <div className="form-theme_item">
-                            <textarea className="form-theme_item__input" name="description" rows={4} />
+                            <textarea name="note" value={note} onChange={this.handleHtmlControlChange} className="form-theme_item__input" rows={4} />
                             <label className="form-theme_item__label" htmlFor> Nội dung tố cáo <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
@@ -96,27 +117,19 @@ class Report extends React.Component {
                     <div className="row row-col-10">
                         <div className="col-md-6 col-12 py-md-0">
                         <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="reporter_name" />
+                            <input type="text" name="report_name" value={report_name} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor> Họ &amp; tên <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>
                         <div className="col-md-6 col-12 py-md-0">
                         <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="reporter_phone" />
+                            <input type="text" name="report_phone" value={report_phone} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor>
                             Liên hệ zalo
                             </label>
                             <div className="form-theme_item__desc p-1 pb-0 text-muted">
                             Đơn tố cáo sẽ bị gỡ nếu zalo ảo.
                             </div>
-                        </div>
-                        </div>
-                        <div className="col-12">
-                        <div className="form-theme_item">
-                            <input type="text" className="form-theme_item__input" name="link_report" />
-                            <label className="form-theme_item__label" htmlFor>
-                            Link phốt trên group (nếu có)
-                            </label>
                         </div>
                         </div>
                         <div className="col-12 mt-4">
@@ -135,10 +148,6 @@ class Report extends React.Component {
             </div>
         </div>
         <Footer></Footer>
-        <div className="float-buttons">
-          <a href="https://admin.vn/scam/create" className="btn-theme btn-theme_primary">TỐ CÁO <span /></a>
-          <a href="https://admin.vn/trust-services" className="btn-theme btn-theme_success">CHECK UY TÍN<span /></a>
-        </div>
       </div>
     </>
     );

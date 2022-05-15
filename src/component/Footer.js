@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer(){
     return (
@@ -104,6 +105,10 @@ function Footer(){
                 </div>
             </div>
             </footer>
+            <div className="float-buttons">
+                <Link to="/report" className="btn-theme btn-theme_primary">TỐ CÁO</Link>
+                <Link to="/service" className="btn-theme btn-theme_success">CHECK UY TÍN</Link>
+            </div>
         </>
     )
 }

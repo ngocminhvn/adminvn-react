@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
+import Scam from "../component/Scam";
 
 class Home extends React.Component {
   render()  {
@@ -55,30 +56,7 @@ class Home extends React.Component {
                 </div>
                 <div className="col-12">
                   <div className="scam-list">
-                    <div className="scam-item d-flex align-items-center py-3 px-4 border bg-white">
-                      <div className="scam-title">
-                        <span className="scam-title_icon">
-                          <i className="fas fa-user" />
-                        </span>
-                        <a href="https://admin.vn/scams/to-truong-giang-286.html" className="scam-title_link">
-                          Tô Trường Giang
-                        </a>
-                      </div>
-                      <div className="scam-info ml-auto w-auto">
-                        <span className="scam-info_time">
-                          <i className="fas fa-clock" />
-                          09-05-2022 17:06
-                        </span>
-                        <span className="scam-info_phone">
-                          <i className="fas fa-money-bill-alt" />
-                          0800002592006 : 0334940776
-                        </span>
-                        <span className="scam-info_eye">
-                          <i className="fas fa-eye" />
-                          399 lượt xem
-                        </span>
-                      </div>
-                    </div>
+                    <Scam></Scam>
                   </div>
                 </div>
               </div>
@@ -202,10 +180,6 @@ class Home extends React.Component {
           </div>
         </div>
         <Footer></Footer>
-        <div className="float-buttons">
-          <a href="https://admin.vn/scam/create" className="btn-theme btn-theme_primary">TỐ CÁO <span /></a>
-          <a href="https://admin.vn/trust-services" className="btn-theme btn-theme_success">CHECK UY TÍN<span /></a>
-        </div>
       </div>
     </>
     );

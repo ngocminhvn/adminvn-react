@@ -1,0 +1,224 @@
+:root {
+    --gray-theme: #F8FAFC;
+    --gray-theme-900: #F4F4F5;
+    --gray-theme-800: #e1e1e1;
+    --gray-theme-700: #dadada;
+    --gray-theme-600: #b7b7b7;
+    --gray-theme-500: #adadad;
+    --gray-theme-400: #969696;
+    --gray-theme-300: #7c7c7c;
+    --gray-theme-200: #696969;
+    --gray-theme-100: #595959;
+    --dark-color: #232323;
+    --transition: .3s all ease-in-out;
+    --font-theme: 'Open Sans', sans-serif;
+    --primary-color: #FF225C;
+    --primary-hover: #ad002c;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    background-color: var(--white);
+    color: var(--dark-color);
+    font-family: var(--font-theme);
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a, a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+button, button:hover, button:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+input,
+select,
+textarea {
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: #8f8d8d !important;
+}
+
+.transition-default {
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+
+.pseudo:before,
+.pseudo:after {
+    position: absolute;
+    content: "";
+    display: block;
+}
+
+.background-cover {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.image-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.image-contain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.limit-lines {
+    --lines: 3;
+    --line-height: 1.5;
+    --font-size: 0.875rem;
+    --calc-max-height: calc(var(--line-height) * var(--lines) * var(--font-size));
+    display: inline-block;
+    display: -webkit-box;
+    width: 100%;
+    max-height: var(--calc-max-height);
+    height: var(--calc-max-height);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    line-clamp: var(--lines);
+    -webkit-line-clamp: var(--lines);
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.hidden-effect {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hidden-effect:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.z-index-0 {
+    z-index: 0;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-2 {
+    z-index: 2;
+}
+
+.z-index-3 {
+    z-index: 3;
+}
+
+.z-index-4 {
+    z-index: 4;
+}
+
+.z-index-5 {
+    z-index: 5;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+.row-5 {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.row-5 > [class*=col] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.row-10 {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.row-10 > [class*=col] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.row-15 {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row-15 > [class*=col] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row-col-5 {
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+}
+
+.row-col-5 > [class*=col] {
+    padding: 5px;
+}
+
+.row-col-10 {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+}
+
+.row-col-10 > [class*=col] {
+    padding: 10px;
+}
+
+.row-col-15 {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+.row-col-15 > [class*=col] {
+    padding: 15px;
+}

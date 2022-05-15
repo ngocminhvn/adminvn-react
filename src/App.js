@@ -6,7 +6,7 @@ import About from "./page/About";
 import Term from "./page/Term";
 import Service from "./page/Service";
 import Report from "./page/Report";
-// ok
+
 class App extends React.Component {
   render()  {
     return (

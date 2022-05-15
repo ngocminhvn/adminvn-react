@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header(){
     return(
@@ -18,22 +19,21 @@ function Header(){
                         </button>
                     </div>
                     <div className="header-logo">
-                        <a href="https://admin.vn">
-                        <img src="https://admin.vn/storage/userfiles/files/admin6.png" alt="ADMINSTRATOR VIETNAM" />
-                        </a>
+                        <Link to="/">
+                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} />
+                        </Link>
                     </div>
                     <div className="header-button d-lg-none ml-auto d-flex align-items-center justify-content-end">
                         <div className="header-button_items position-relative">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                            <i className="far fa-search" />
+                            <img src="./search.svg" />
                         </button>
                         <div className="header-search">
-                            <form action="https://admin.vn/scam/search" method="POST">
-                            <input type="hidden" name="_token" defaultValue="DVdm4UmWiAeiCWuVFJZDH1dlJinUd7HeWw8RIsGL" />
+                            <form method="POST">
                             <div className="form-group position-relative">
                                 <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                                 <button type="submit">
-                                <i className="far fa-search" />
+                                    <FontAwesomeIcon icon="fas fa-search" />
                                 </button>
                             </div>
                             </form>
@@ -57,9 +57,9 @@ function Header(){
                     <div id="header-navigation" className="header-navigation d-lg-flex align-items-center justify-content-end">
                     <ul>
                         <li className="d-block d-lg-none header-navigation_logo">
-                        <a href="https://admin.vn">
-                            <img src="https://admin.vn/storage/userfiles/files/admin6.png" alt="" />
-                        </a>
+                        <Link to="/">
+                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} />
+                        </Link>
                         <button type="button" className="header-navigation_close" id="header-navigation_close"><i className="far fa-times" /></button>
                         </li>
                         <li>
@@ -84,14 +84,14 @@ function Header(){
                     <div className="header-button d-none d-lg-flex align-items-center justify-content-end">
                     <div className="header-button_items position-relative">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                        <i className="far fa-search" />
+                            <FontAwesomeIcon icon="fas fa-search" />
                         </button>
                         <div className="header-search">
                         <form action="https://admin.vn/scam/search" method="POST">
                             <div className="form-group position-relative">
                             <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                             <button type="submit">
-                                <i className="far fa-search" />
+                                    <FontAwesomeIcon icon="fas fa-search" />
                             </button>
                             </div>
                         </form>

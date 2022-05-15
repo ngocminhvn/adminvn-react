@@ -176,10 +176,6 @@ class Term extends React.Component {
             </div>
         </div>
         <Footer></Footer>
-        <div className="float-buttons">
-          <a href="https://admin.vn/scam/create" className="btn-theme btn-theme_primary">TỐ CÁO <span /></a>
-          <a href="https://admin.vn/trust-services" className="btn-theme btn-theme_success">CHECK UY TÍN<span /></a>
-        </div>
       </div>
     </>
     );
