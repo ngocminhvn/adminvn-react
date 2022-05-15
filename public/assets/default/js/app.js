@@ -48,13 +48,8 @@
             }
         }
         $('#header-navigation_close').click(function () {
-                elmBody.attr({
-                    'class': '',
-                    'style': ''
-                });
-                document.removeEventListener('touchmove', handleTouchMoveNavigation);
-                elmNavigation.find('.collapse').collapse('hide');
-            });
+                elmBody.removeClass('is-show_navigation');
+        });
             const handleEffectButton = function () {
                 $('.btn-theme').on('mouseenter', function (e) {
                     let parentOffset = $(this).offset(),
