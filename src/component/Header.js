@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header(){
+    function CloseHeader() {
+        var Body = document.getElementById("my-body");
+        Body.classList.remove("is-show_navigation");
+    }
     return(
         <>
         <header className="header bg-white position-relative z-index-10" id="header">
