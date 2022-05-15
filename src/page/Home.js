@@ -37,11 +37,11 @@ class Home extends React.Component {
                             <i className="far fa-search" />
                           </button>
                         </div>
-                        <a href="https://admin.vn/scam/create" className="btn-theme btn-theme_primary">
+                        <a href="/report" className="btn-theme btn-theme_primary">
                           Gửi Tố Cáo Scam
                           <span />
                         </a>
-                        <a href="https://admin.vn/trust-services" className="btn-theme btn-theme_success">
+                        <a href="/service" className="btn-theme btn-theme_success">
                           Check Quỹ Bảo Hiểm
                           <span />
                         </a>
