@@ -54,7 +54,7 @@
                 });
                 document.removeEventListener('touchmove', handleTouchMoveNavigation);
                 elmNavigation.find('.collapse').collapse('hide');
-            }
+            });
             const handleEffectButton = function () {
                 $('.btn-theme').on('mouseenter', function (e) {
                     let parentOffset = $(this).offset(),
