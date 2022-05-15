@@ -6,6 +6,7 @@ import About from "./page/About";
 import Term from "./page/Term";
 import Service from "./page/Service";
 import Report from "./page/Report";
+import Scamer from "./page/Scamer";
 
 class App extends React.Component {
   render()  {
@@ -18,6 +19,7 @@ class App extends React.Component {
         <Route path="term" element={<Term />} />
         <Route path="service" element={<Service />} />
         <Route path="report" element={<Report />} />
+        <Route path='/scamer/:scamID' element={<Scamer />} />
       </Routes>
     </BrowserRouter>
     );

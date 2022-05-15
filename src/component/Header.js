@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header(){
     function CloseHeader() {
@@ -24,27 +23,27 @@ function Header(){
                     </div>
                     <div className="header-logo">
                         <Link to="/">
-                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} />
+                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} alt="logo" />
                         </Link>
                     </div>
                     <div className="header-button d-lg-none ml-auto d-flex align-items-center justify-content-end">
                         <div className="header-button_items position-relative">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                            <img src="./search.svg" />
+                            <i className="fa fa-search"></i>
                         </button>
                         <div className="header-search">
                             <form method="POST">
                             <div className="form-group position-relative">
                                 <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                                 <button type="submit">
-                                    <FontAwesomeIcon icon="fas fa-search" />
+                                    <i className="fa fa-search"></i>
                                 </button>
                             </div>
                             </form>
                         </div>
                         </div>
                         <div className="header-button_items position-relative">
-                        <a href="/report" role="button" className="btn-theme btn-theme_primary">
+                        <Link to="/report" role="button" className="btn-theme btn-theme_primary">
                             <div className="d-block d-sm-none">
                             <i className="fas fa-exclamation" />
                             </div>
@@ -52,7 +51,7 @@ function Header(){
                             Tố cáo lừa đảo
                             </div>
                             <span />
-                        </a>
+                        </Link>
                         </div>
                     </div>
                     </div>
@@ -62,7 +61,7 @@ function Header(){
                     <ul>
                         <li className="d-block d-lg-none header-navigation_logo">
                         <Link to="/">
-                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} />
+                            <img src="https://i.imgur.com/dOUNkAK.png" height={42} alt="logo" />
                         </Link>
                         <button type="button" className="header-navigation_close" id="header-navigation_close" onClick={CloseHeader}>&times;</button>
                         </li>
@@ -88,24 +87,24 @@ function Header(){
                     <div className="header-button d-none d-lg-flex align-items-center justify-content-end">
                     <div className="header-button_items position-relative">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                            <FontAwesomeIcon icon="fas fa-search" />
+                            <i className="fa fa-search"></i>
                         </button>
                         <div className="header-search">
                         <form method="POST">
                             <div className="form-group position-relative">
                             <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                             <button type="submit">
-                                    <FontAwesomeIcon icon="fas fa-search" />
+                                <i className="fa fa-search"></i>
                             </button>
                             </div>
                         </form>
                         </div>
                     </div>
                     <div className="header-button_items position-relative">
-                        <a href="/report" role="button" className="btn-theme btn-theme_primary">
+                        <Link to="/report" role="button" className="btn-theme btn-theme_primary">
                         TỐ CÁO LỪA ĐẢO
                         <span />
-                        </a>
+                        </Link>
                     </div>
                     </div>
                 </div>

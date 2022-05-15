@@ -13,24 +13,20 @@ class Report extends React.Component {
             stk:'',
             bank:'',
             note:'',
-            image:''
+            image:[]
         }
        
     }
 
     handleHtmlControlChange = (event) => {
-        this.setState({ [event.target.name]:event.target.value   })
+        this.setState({ [event.target.name]:event.target.value })
     }
-    handleChange = (event) => {
-        this.setState({food: Array.from(event.target.selectedOptions, (item) => item.value)});
-      }
-    handleSubmit  = (event) => {
+    handleSubmit = (event) => {
         console.log(this.state);
         event.preventDefault();
         axios.post('https://reqres.in/api/users',this.state).
-        then( response => {
+        then(response => {
             console.log(response)
-            this.setState({message:"User created successfuly."})
         }).catch( error => {
             console.log(error)
         })
@@ -85,7 +81,7 @@ class Report extends React.Component {
                         </div>
                         <div className="col-12">
                         <div className="form-theme_item">
-                            <input type="file" className="form-theme_item__input input-image" name="image" value={image}/>
+                            <input type="text" name="image" value={image} onChange={this.handleHtmlControlChange} className="form-theme_item__input" />
                             <label className="form-theme_item__label" htmlFor> Ảnh bằng chứng <span className="font-weight-bold text-danger">*</span> </label>
                         </div>
                         </div>

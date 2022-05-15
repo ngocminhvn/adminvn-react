@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Scam from "../component/Scam";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   render()  {
@@ -30,21 +31,21 @@ class Home extends React.Component {
                 <div className="col-12">
                   <div className="row align-items-center">
                     <div className="col-lg-6">
-                      <form action="https://admin.vn/scam/search" method="POST">
+                      <form method="POST">
                         <div className="form-group position-relative">
                           <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
                           <button type="submit">
-                            <i className="far fa-search" />
+                          <i className="fa fa-search"></i>
                           </button>
                         </div>
-                        <a href="/report" className="btn-theme btn-theme_primary">
+                        <Link to="/report" className="btn-theme btn-theme_primary">
                           Gửi Tố Cáo Scam
                           <span />
-                        </a>
-                        <a href="/service" className="btn-theme btn-theme_success">
+                        </Link>
+                        <Link to="/service" className="btn-theme btn-theme_success">
                           Check Quỹ Bảo Hiểm
                           <span />
-                        </a>
+                        </Link>
                       </form>
                     </div>
                     <div className="col-lg-6">
@@ -78,7 +79,7 @@ class Home extends React.Component {
                 </div>
                 <div className="col-12">
                   <div className="row row-col-10">
-                    <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="col-12 col-sm-6 col-lg-4">
                       <div className="service-card">
                         <div className="service-bg_main" />
                         <div className="service-bg_before" />
@@ -87,21 +88,21 @@ class Home extends React.Component {
                           <i className="fas fa-check" />
                         </div>
                         <div className="service-content">
-                          <a href="/" className="service-content_title">
+                          <Link to="/" className="service-content_title">
                             Check scammer
-                          </a>
+                          </Link>
                           <div className="service-content_desc">
                             Bạn chỉ cần nhập SDT, STK ngân hàng, thông tin của scammer vào trong ô tìm kiếm sẽ được phơi bày
                           </div>
                         </div>
                         <div className="service-action">
-                          <a href="/" className="btn-theme btn-theme_white">
+                          <Link to="/" className="btn-theme btn-theme_white">
                             Check ngay
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="col-12 col-sm-6 col-lg-4">
                       <div className="service-card">
                         <div className="service-bg_main" />
                         <div className="service-bg_before" />
@@ -110,22 +111,22 @@ class Home extends React.Component {
                           <i className="fas fa-check" />
                         </div>
                         <div className="service-content">
-                          <a href="/scam/create" className="service-content_title">
+                          <Link to="/report" className="service-content_title">
                             Tố cáo lừa đảo
-                          </a>
+                          </Link>
                           <div className="service-content_desc">
                             Bạn muốn tố cáo một ai đó đang lừa đảo bạn ,đã đủ chứng cứ để kẻ lừa đảo phải chịu hình phạt
                           </div>
                         </div>
                         <div className="service-action">
-                          <a href="/scam/create" className="btn-theme btn-theme_white">
+                          <Link to="/report" className="btn-theme btn-theme_white">
                             Tố cáo
                             <span />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-sm-6 col-lg-3">
+                    <div className="col-12 col-sm-6 col-lg-4">
                       <div className="service-card">
                         <div className="service-bg_main" />
                         <div className="service-bg_before" />
@@ -134,42 +135,18 @@ class Home extends React.Component {
                           <i className="fas fa-check" />
                         </div>
                         <div className="service-content">
-                          <a href="/trust-services" className="service-content_title">
+                          <Link to="/service" className="service-content_title">
                             Check quỹ bảo hiểm
-                          </a>
+                          </Link>
                           <div className="service-content_desc">
-                            Check quỹ bảo hiểm được Admin VietNam đảm bảo xác nhận uy tín trên từng giao dịch
+                            Check quỹ bảo hiểm được Admin VietNam đảm bảo xác nhận uy tín trên từng giao dịch an toàn
                           </div>
                         </div>
                         <div className="service-action">
-                          <a href="/trust-services" className="btn-theme btn-theme_white">
+                          <Link to="/service" className="btn-theme btn-theme_white">
                             Check quỹ
                             <span />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-sm-6 col-lg-3">
-                      <div className="service-card">
-                        <div className="service-bg_main" />
-                        <div className="service-bg_before" />
-                        <div className="service-bg_after" />
-                        <div className="service-icon">
-                          <i className="fas fa-check" />
-                        </div>
-                        <div className="service-content">
-                          <a href="https://napthe1s.vn" className="service-content_title">
-                            Dịch vụ Đổi Thẻ Cào
-                          </a>
-                          <div className="service-content_desc">
-                            Website đổi thẻ cào thành tiền mặt ,uy tín tự động rút tiền về momo ,atm 24/24 được đảm bảo bởi Admin VietNam
-                          </div>
-                        </div>
-                        <div className="service-action">
-                          <a href="https://napthe1s.vn" className="btn-theme btn-theme_white">
-                            Liên hệ
-                            <span />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

@@ -1,11 +1,11 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class Scam extends React.Component {
   state = {
     scam: []
   }
-
   componentDidMount() {
     axios.get(`https://checkscam77.com/backend/scam-list.php`)
       .then(res => {
@@ -20,14 +20,14 @@ export default class Scam extends React.Component {
         {
           this.state.scam
             .map(person =>
-              <div className="scam-item d-flex align-items-center py-3 px-4 border bg-white" key={person.id} >
+              <div className="scam-item d-flex align-items-center py-3 px-4 border bg-white" >
               <div className="scam-title">
                 <span className="scam-title_icon">
                   <i className="fas fa-user" />
                 </span>
-                <a href={person.url} className="scam-title_link">
+                <Link to={`/scamer/${person.id}`}>
                   {person.name}
-                </a>
+                </Link>
               </div>
               <div className="scam-info ml-auto w-auto">
                 <span className="scam-info_time">
