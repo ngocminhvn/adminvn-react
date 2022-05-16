@@ -2438,3 +2438,13 @@ body::-webkit-scrollbar-track {
         justify-content: space-between;
     }
 }
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+@media all and (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
