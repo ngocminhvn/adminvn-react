@@ -23,19 +23,11 @@ function Header(){
                     </div>
                     <div className="header-button d-lg-none ml-auto d-flex align-items-center justify-content-end">
                         <div className="header-button_items position-relative">
+                        <a href="https://github.com/ngocminhvn/adminvn-react">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                            <i className="fa fa-search"></i>
+                            <i className="fab fa-github"></i>
                         </button>
-                        <div className="header-search">
-                            <form method="POST">
-                            <div className="form-group position-relative">
-                                <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
-                                <button type="submit">
-                                    <i className="fa fa-search"></i>
-                                </button>
-                            </div>
-                            </form>
-                        </div>
+                        </a>
                         </div>
                         <div className="header-button_items position-relative">
                         <Link to="/report" role="button" className="btn-theme btn-theme_primary">
@@ -86,16 +78,6 @@ function Header(){
                             <i className="fab fa-github"></i>
                         </button>
                         </a>
-                        <div className="header-search">
-                        <form method="POST">
-                            <div className="form-group position-relative">
-                            <input type="text" className="form-control" name="search" placeholder="Nhập số điện thoại, số tài khoản ngân hàng ..." />
-                            <button type="submit">
-                                <i className="fa fa-search"></i>
-                            </button>
-                            </div>
-                        </form>
-                        </div>
                     </div>
                     <div className="header-button_items position-relative">
                         <Link to="/report" role="button" className="btn-theme btn-theme_primary">
