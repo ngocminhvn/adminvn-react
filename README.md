@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Using!
+### Important!
+This is open source not sell!!!
 - Config api url
 - Run command: `npm run build`
 - Upload my build file 
