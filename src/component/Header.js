@@ -81,9 +81,11 @@ function Header(){
                 <div className="col-lg-3">
                     <div className="header-button d-none d-lg-flex align-items-center justify-content-end">
                     <div className="header-button_items position-relative">
+                        <a href="https://github.com/ngocminhvn/adminvn-react">
                         <button type="button" className="btn-theme btn-theme_gray btn-collapse_search btn-call_search">
-                            <i className="fa fa-search"></i>
+                            <i className="fab fa-github"></i>
                         </button>
+                        </a>
                         <div className="header-search">
                         <form method="POST">
                             <div className="form-group position-relative">
