@@ -1,5 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Header from "./component/Header";
+import Footer from "./component/Footer";
 
 import Home from "./page/Home";
 import About from "./page/About";
@@ -11,7 +14,8 @@ import Scamer from "./page/Scamer";
 class App extends React.Component {
   render()  {
     return (
-      <BrowserRouter>
+    <Router>
+     <Header></Header>
       <Routes>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
@@ -19,9 +23,10 @@ class App extends React.Component {
         <Route path="term" element={<Term />} />
         <Route path="service" element={<Service />} />
         <Route path="report" element={<Report />} />
-        <Route path='/scamer/:scamID' element={<Scamer />} />
+        <Route path='/scamer/:id' element={<Scamer />} />
       </Routes>
-    </BrowserRouter>
+     <Footer></Footer>
+    </Router>
     );
   }
 }

@@ -20,7 +20,7 @@ export default class Admin extends React.Component {
         {
           this.state.service
             .map(person =>
-            <div className="shield-item">
+            <div className="shield-item" key={person.name}>
                 <Link to="https://admin.vn/trust-service/le-van-viet-28.html" className="shield-item_link">
                     <img src="https://graph.facebook.com/100041184143723/picture?width=500&height=500&access_token=2712477385668128|b429aeb53369951d411e1cae8e810640" alt={person.name} />
                     {person.name}

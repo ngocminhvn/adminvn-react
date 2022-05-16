@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../script";
 
 function Header(){
-    function CloseHeader() {
-        var Body = document.getElementById("my-body");
-        Body.classList.remove("is-show_navigation");
-    }
     return(
         <>
         <header className="header bg-white position-relative z-index-10" id="header">
@@ -15,10 +12,8 @@ function Header(){
                 <div className="col-lg-3">
                     <div className="header-bar d-flex align-items-center">
                     <div className="header-hamburger d-block d-lg-none">
-                        <button type="button" className="no-animation" id="header-hamburger">
-                        <span />
-                        <span />
-                        <span />
+                        <button type="button" id="header-hamburger">
+                            <i className="fa fa-bars"></i>
                         </button>
                     </div>
                     <div className="header-logo">
@@ -57,13 +52,13 @@ function Header(){
                     </div>
                 </div>
                 <div className="col-lg-6">
-                    <div id="header-navigation" className="header-navigation d-lg-flex align-items-center justify-content-end">
+                    <div id="header-navigation" className="header-navigation d-lg-flex align-items-center justify-content-end collapse">
                     <ul>
                         <li className="d-block d-lg-none header-navigation_logo">
                         <Link to="/">
                             <img src="https://i.imgur.com/dOUNkAK.png" height={42} alt="logo" />
                         </Link>
-                        <button type="button" className="header-navigation_close" id="header-navigation_close" onClick={CloseHeader}>&times;</button>
+                        <button type="button" className="header-navigation_close" id="header-navigation_close">&times;</button>
                         </li>
                         <li>
                         <Link to="/home">HOME</Link>

@@ -1,13 +1,10 @@
 import React from "react";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 
 class Term extends React.Component {
   render()  {
     return (
       <>
       <div>
-        <Header></Header>
         <div id="main" className="main">
             <div className="container">
             <div className="row">
@@ -175,7 +172,6 @@ class Term extends React.Component {
             </div>
             </div>
         </div>
-        <Footer></Footer>
       </div>
     </>
     );

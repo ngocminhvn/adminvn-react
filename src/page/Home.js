@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import Scam from "../component/Scam";
 import { Link } from "react-router-dom";
 
@@ -9,7 +7,6 @@ class Home extends React.Component {
     return (
       <>
       <div>
-        <Header></Header>
         <div id="main" className="main">
           <div className="section-gap section-intro">
             <div className="container">
@@ -156,7 +153,6 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        <Footer></Footer>
       </div>
     </>
     );

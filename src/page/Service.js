@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import Admin from "../component/Admin";
 
 class Service extends React.Component {
@@ -8,28 +6,27 @@ class Service extends React.Component {
     return (
       <>
       <div>
-        <Header></Header>
-        <div id="main" class="main">
-            <div class="section-gap section-shield">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="section-heading">
-                                <div class="title">
+        <div id="main" className="main">
+            <div className="section-gap section-shield">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="section-heading">
+                                <div className="title">
                                     QUỸ BẢO HIỂM MMO
                                 </div>
-                                <div class="line"></div>
+                                <div className="line"></div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="tab-1">
-                                    <div class="shield-inner">
-                                        <div class="shield-list">
-                                            <div class="shield-title">
-                                                <i class="fas fa-star"></i>
+                        <div className="col-12">
+                            <div className="tab-content">
+                                <div className="tab-pane active show" id="tab-1">
+                                    <div className="shield-inner">
+                                        <div className="shield-list">
+                                            <div className="shield-title">
+                                                <i className="fas fa-star"></i>
                                                 ADMINISTRATOR VIETNAM:
-                                                <i class="fas fa-star"></i>
+                                                <i className="fas fa-star"></i>
                                             </div>
                                             <Admin></Admin>
                                         </div>
@@ -41,7 +38,6 @@ class Service extends React.Component {
                 </div>
             </div>
         </div>
-        <Footer></Footer>
       </div>
     </>
     );

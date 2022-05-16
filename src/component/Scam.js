@@ -7,7 +7,7 @@ export default class Scam extends React.Component {
     scam: []
   }
   componentDidMount() {
-    axios.get(`https://checkscam77.com/backend/scam-list.php`)
+    axios.get(`https://checkscam77.com/backend/api.php?type=getlistscam`)
       .then(res => {
         const scam = res.data;
         this.setState({ scam });
@@ -20,7 +20,7 @@ export default class Scam extends React.Component {
         {
           this.state.scam
             .map(person =>
-              <div className="scam-item d-flex align-items-center py-3 px-4 border bg-white" >
+              <div className="scam-item d-flex align-items-center py-3 px-4 border bg-white" key={person.id}>
               <div className="scam-title">
                 <span className="scam-title_icon">
                   <i className="fas fa-user" />
