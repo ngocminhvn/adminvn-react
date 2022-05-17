@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
-//require 'database.php';
-require '../config/config.php';
+require 'database.php';
+//require '../config/config.php';
 
 if($_GET['type'] == "getlistscam"){
     $scam = [];
