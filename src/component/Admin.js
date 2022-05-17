@@ -7,7 +7,7 @@ export default class Admin extends React.Component {
     service: []
   }
   componentDidMount() {
-    axios.get(`https://checkscam77.com/backend/api.php?type=getlistservice`)
+    axios.get(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=getlistservice`)
       .then(res => {
         const service = res.data;
         this.setState({ service });

@@ -1,8 +1,16 @@
 import React from "react";
 import axios from "axios";
+import Swal from "sweetalert2";  
 
+function sweetalert(text,icon) {  
+    Swal.fire({
+        title: 'Thông Báo',
+        text,
+        icon,
+        confirmButtonText: 'Ok'
+    })
+}  
 class Report extends React.Component {
-
     constructor(props){
         super(props)
         this.state= {
@@ -11,25 +19,38 @@ class Report extends React.Component {
             stk:'',
             bank:'',
             note:'',
-            image:[]
+            report_name:'',
+            report_phone:'',
+            image:''
         }
        
     }
     handleHtmlControlChange = (event) => {
         this.setState({ [event.target.name]:event.target.value })
     }
+    // tạm thời chưa khắc phụ được vấn đề res json trả về
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://checkscam77.com/backend/api.php?type=postdatascam',this.state)
-        .then(response => {
-            console.log(response)
+        axios.post(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=postdatascam`,this.state)
+        .then(function (response) {
+            console.log(response);
+            if(response.status == ''){
+                sweetalert('Lỗi');
+            }else if(response.status == '200'){
+                console.log(response);
+                sweetalert('Gửi thành công!','success');
+            }else if(response.status == '100'){
+                sweetalert('Lỗi sever vui lòng chờ!','error');
+            }else if(response.status == '101'){
+                sweetalert('Vui lòng điều đầy đủ thông tin!','error');
+        }
         }).catch( error => {
-            console.log(error)
+            sweetalert(error,'error');
         })
     }
 
   render()  {
-    const { name,phone,stk,bank,note,image,report_name,report_phone } = this.state
+    const { name,phone,stk,bank,note,image,report_name,report_phone } = this.state;
     return (
       <>
       <div>

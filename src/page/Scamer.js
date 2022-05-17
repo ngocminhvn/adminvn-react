@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }   
@@ -12,13 +11,12 @@ class Scamer extends React.Component {
     }
     componentDidMount() {
         const { id } = this.props.params;
-        axios.get(`https://checkscam77.com/backend/api.php?type=fetchscam&id=${id}`)
+        axios.get(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=fetchscam&id=${id}`)
         .then(res => {
           const m = res.data;
           this.setState({ m });
         });
     }
-
     render() {
         return (
             <>
@@ -98,8 +96,8 @@ class Scamer extends React.Component {
                                                     <div className="scammer-item_content">
                                                         <div className="scammer-item_content__image">
                                                             <div className="scammer-item_content__image-item">
-                                                                <a href={`https://checkscam77.com${f.image}`} data-fancybox="image-scammer">
-                                                                    <img src={`https://checkscam77.com/${f.image}`} alt="" />
+                                                                <a href={`https://${process.env.REACT_APP_SERVER_NAME}/${f.image}`} data-fancybox="image-scammer">
+                                                                    <img src={`https://${process.env.REACT_APP_SERVER_NAME}/${f.image}`} alt="" />
                                                                 </a>
                                                             </div>
                                                         </div>

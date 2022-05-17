@@ -1,6 +1,9 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-require 'database.php';
+header("Access-Control-Allow-Headers: *");
+
+//require 'database.php';
+require '../config/config.php';
 
 if($_GET['type'] == "getlistscam"){
     $scam = [];
@@ -70,13 +73,38 @@ if($_GET['type'] == "fetchservice"){
 }
 
 if($_GET['type'] == "postdatascam"){
-    $_POST = json_decode(array_keys($_POST)[0], true);
+    $_POST = json_decode(file_get_contents("php://input"),true);
     $name = htmlentities($_POST['name']);
     $phone = htmlentities($_POST['phone']);
     $stk = htmlentities($_POST['stk']);
     $bank = htmlentities($_POST['bank']);
     $note = htmlentities($_POST['name']);
     $image = $_POST['image'];
-    // coming soon....
+    $report_name = htmlentities($_POST['report_name']);
+    $report_phone = htmlentities($_POST['report_phone']);
+    
+//    if($name=="" || $phone=="" || $stk=="" || $bank=="" || $note=="" || $image=="" || $report_name=="" || $report_phone==""){
+//        exit(json_decode(array('status' => '101')));
+//    }
+    if(!$name || !$phone || !$stk || !$bank || !$note || !$image || !$report_name || !$report_phone){
+        exit(json_decode(array('status' => '101')));
+    }
+    
+    $M = $ketnoi->query("INSERT INTO `ticket` SET 
+    `username` = '".$name."',
+    `ly_do` = '".$note."',
+    `status` = 'sss',
+    `sdt` = '".$phone."',
+    `ngan_hang` = '".$nganhang."',
+    `stk` = '".$stk."',
+    `anh` = '".$image."',
+    `hoten_np` = '".$report_name."',
+    `sdt_np` = '".$report_phone."',
+    `ngay` = '".$time."' ");
+    if($M){
+        exit(json_encode(array('status' => '300')));
+    }else{
+        exit(json_encode(array('status' => '100')));
+    }
 }
 ?>
