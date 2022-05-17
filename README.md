@@ -3,11 +3,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Important!
-This is open source not sell!!!
+DEMO: https://adminvn-react.vercel.app
+BUILD: https://demo.trumsource.com/build.zip
 - Config api url
 - Run command: `npm run build`
 - Upload my build file <br>
-DEMO: https://adminvn-react.vercel.app
+
 
 
 ## Available Scripts
