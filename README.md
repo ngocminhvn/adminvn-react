@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is open source not sell!!!
 - Config api url
 - Run command: `npm run build`
-- Upload my build file 
+- Upload my build file <br>
 DEMO: https://adminvn-react.vercel.app
 
 
