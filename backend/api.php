@@ -1,8 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-// source code by minh
+require 'database.php';
 
-require '../config/config.php';
 if($_GET['type'] == "getlistscam"){
     $scam = [];
     foreach(mysqli_query($ketnoi,"SELECT * FROM `ticket` ") as $row){
@@ -17,7 +16,21 @@ if($_GET['type'] == "getlistscam"){
     exit(json_encode($scam));
 }
 
-if($_GET['type'] == "getinfoscam"){
+if($_GET['type'] == "getlistservice"){
+    $scam = [];
+    foreach(mysqli_query($ketnoi,"SELECT * FROM `cards` ") as $row){
+    $scam[] = [
+    'code'        => $row['code'],
+    'username'      => $row['username'],
+    'phone'       => $row['sdt'],
+    'facebook'       => $row['id_fb']
+    ];
+    
+    }
+    exit(json_encode($scam));
+}
+
+if($_GET['type'] == "fetchscam"){
     $ID = $_GET['id'];
     $info = [];
     foreach(mysqli_query($ketnoi,"SELECT * FROM `ticket` WHERE `id` = '$ID' LIMIT 0,1") as $row){
@@ -35,6 +48,25 @@ if($_GET['type'] == "getinfoscam"){
     
     }
     exit(json_encode($info));
+}
+
+if($_GET['type'] == "fetchservice"){
+    $CODE = $_GET['code'];
+    $service = [];
+    foreach(mysqli_query($ketnoi,"SELECT * FROM `cards` WHERE `code` = '$CODE' LIMIT 0,1") as $row){
+    $service[] = [
+    'code'        => $row['code'],
+    'username'      => $row['username'],
+    'phone'       => $row['sdt'],
+    'facebook'       => $row['id_fb'],
+    'website'       => $row['website'],
+    'service'       => $row['dich_vu'],
+    'note'     => $row['mota'],
+    'money'     => $row['money']
+    ];
+    
+    }
+    exit(json_encode($service));
 }
 
 if($_GET['type'] == "postdatascam"){

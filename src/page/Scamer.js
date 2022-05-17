@@ -12,7 +12,7 @@ class Scamer extends React.Component {
     }
     componentDidMount() {
         const { id } = this.props.params;
-        axios.get(`https://checkscam77.com/backend/api.php?type=getinfoscam&id=${id}`)
+        axios.get(`https://checkscam77.com/backend/api.php?type=fetchscam&id=${id}`)
         .then(res => {
           const m = res.data;
           this.setState({ m });

@@ -166,7 +166,11 @@ body::-webkit-scrollbar-track {
     width: 225%;
     height: 562.5px;
 }
-
+.btn-radius {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
 .header {
     border-bottom: 1px solid var(--gray-theme-800);
     -webkit-box-shadow: 0px 2px 4px -2px rgba(24, 39, 75, 0.08), 0px 4px 4px -2px rgba(24, 39, 75, 0.08);
