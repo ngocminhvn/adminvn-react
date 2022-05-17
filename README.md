@@ -3,10 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Important!
-This is open source not sell!!!
-- Config api url
-- Run command: `npm run build`
-- Upload my build file 
+INSTALL: https://github.com/ngocminhvn/adminvn-react/blob/main/build.zip?raw=true
 DEMO: https://adminvn-react.vercel.app
 
 
