@@ -34,14 +34,14 @@ class Report extends React.Component {
         axios.post(`/backend/api.php?type=postdatascam`,this.state)
         .then(function (response) {
             console.log(response);
-            if(response.status == ''){
+            if(response.status === ''){
                 sweetalert('Lỗi');
-            }else if(response.status == '200'){
+            }else if(response.status === '200'){
                 console.log(response);
                 sweetalert('Gửi thành công!','success');
-            }else if(response.status == '100'){
+            }else if(response.status === '100'){
                 sweetalert('Lỗi sever vui lòng chờ!','error');
-            }else if(response.status == '101'){
+            }else if(response.status === '101'){
                 sweetalert('Vui lòng điều đầy đủ thông tin!','error');
         }
         }).catch( error => {
