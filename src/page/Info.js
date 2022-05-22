@@ -13,7 +13,7 @@ class Info extends React.Component {
     }
     componentDidMount() {
         const { code } = this.props.params;
-        axios.get(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=fetchservice&code=${code}`)
+        axios.get(`/backend/api.php?type=fetchservice&code=${code}`)
             .then(res => {
                 const i = res.data;
                 this.setState({ i });
