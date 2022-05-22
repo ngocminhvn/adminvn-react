@@ -31,7 +31,7 @@ class Report extends React.Component {
     // tạm thời chưa khắc phụ được vấn đề res json trả về
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=postdatascam`,this.state)
+        axios.post(`/backend/api.php?type=postdatascam`,this.state)
         .then(function (response) {
             console.log(response);
             if(response.status == ''){
