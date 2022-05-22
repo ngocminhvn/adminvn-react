@@ -11,7 +11,7 @@ class Scamer extends React.Component {
     }
     componentDidMount() {
         const { id } = this.props.params;
-        axios.get(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=fetchscam&id=${id}`)
+        axios.get(`/backend/api.php?type=fetchscam&id=${id}`)
         .then(res => {
           const m = res.data;
           this.setState({ m });
