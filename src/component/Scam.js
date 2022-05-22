@@ -7,7 +7,7 @@ export default class Scam extends React.Component {
     scam: []
   }
   componentDidMount() {
-    axios.get(`https://${process.env.REACT_APP_SERVER_NAME}/backend/api.php?type=getlistscam`)
+    axios.get(`/backend/api.php?type=getlistscam`)
       .then(res => {
         const scam = res.data;
         this.setState({ scam });
