@@ -3,7 +3,20 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
 require 'database.php';
-//require '../config/config.php';
+
+if($_GET['type'] == "site"){
+    $setting = [];
+    foreach(mysqli_query($ketnoi,"SELECT * FROM `setting`") as $row){
+    $setting[] = [
+    'logo'        => $row['site_image'],
+    'name'      => $row['site_tenweb'],
+    'facebook'       => $row['facebook'],
+    'phone'       => $row['sdt_admin']
+    ];
+    
+    }
+    exit(json_encode($setting));
+}
 
 if($_GET['type'] == "getlistscam"){
     $scam = [];
@@ -83,9 +96,6 @@ if($_GET['type'] == "postdatascam"){
     $report_name = htmlentities($_POST['report_name']);
     $report_phone = htmlentities($_POST['report_phone']);
     
-//    if($name=="" || $phone=="" || $stk=="" || $bank=="" || $note=="" || $image=="" || $report_name=="" || $report_phone==""){
-//        exit(json_decode(array('status' => '101')));
-//    }
     if(!$name || !$phone || !$stk || !$bank || !$note || !$image || !$report_name || !$report_phone){
         exit(json_decode(array('status' => '101')));
     }
